@@ -12,8 +12,10 @@ public class DemoApplication implements CommandLineRunner {
 	
 	@Override
 	public void run(String... args) throws Exception {
-		Message message = new Message(1, "Hallo World");
-		repo.save(message);
+		if(null == repo.findById(1L)) {
+			Message message = new Message("Hallo World!");
+			repo.save(message);
+		}
 	}
 
 	public static void main(String[] args) {

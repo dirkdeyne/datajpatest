@@ -1,18 +1,18 @@
 package com.example.demo;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class Message {
 	
-	@Id
-	long id;
+	@Id @GeneratedValue
+	Long id;
 	
 	String message;
 	public Message() {}
-	public Message(long i, String string) {
-		id = i;
+	public Message(String string) {
 		message = string;
 	}
 
@@ -21,11 +21,11 @@ public class Message {
 		return "Message [id=" + id + ", message=" + message + "]";
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
-
-	public void setId(long id) {
+	
+	public void setId(Long id) {
 		this.id = id;
 	}
 
